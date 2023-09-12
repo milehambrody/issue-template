@@ -51,8 +51,8 @@ body:
     attributes:
       label: "Screenshots"
       description: If applicable, add screenshots to help explain your problem. (USE JAM)
-      value: |
-        ![DESCRIPTION](LINK.png)
+      placeholder: |
+        (LINK.png)
       render: bash
     validations:
       required: false
