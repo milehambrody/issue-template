@@ -18,7 +18,7 @@ body:
     attributes:
       label: "Reproduction steps"
       description: Please enter the steps required to reproduce this issue
-      value: |
+      placeholder: |
         e.g
         1. Go to 'Header'
         2. Click on 'Country Selector'
@@ -31,7 +31,7 @@ body:
     attributes:
       label: "Expected Outcome"
       description: Please enter the expected outcome
-      value: |
+      placeholder: |
         e.g Flag Images should show on the country selector
       render: bash
     validations:
@@ -41,7 +41,7 @@ body:
     attributes:
       label: "Actual Outcome"
       description: Please enter the actual outcome
-      value: |
+      placeholder: |
         e.g Flag Images have placeholder images
       render: bash
     validations:
