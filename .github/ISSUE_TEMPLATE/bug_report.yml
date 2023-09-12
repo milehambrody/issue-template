@@ -1,64 +1,102 @@
-name: Bug Report
-description: File a bug report
-title: "[Bug]: "
-labels: ["bug", "triage"]
-projects: ["octo-org/1", "octo-org/44"]
-assignees:
-  - octocat
+name: "🐛 Bug Report"
+description: Create a bug report.
+title: "🐛 [BUG] - <title>"
+labels: [
+  "bug"
+]
 body:
-  - type: markdown
+  - type: textarea
+    id: description
     attributes:
+      label: "Description"
+      description: Please enter a detailed description of your issue
+      placeholder: Give as much detail as possible to help fix the issue faster
+    validations:
+      required: true
+  - type: textarea
+    id: reprod
+    attributes:
+      label: "Reproduction steps"
+      description: Please enter the steps required to reproduce this issue
       value: |
-        Thanks for taking the time to fill out this bug report!
-  - type: input
-    id: contact
+        e.g
+        1. Go to 'Header'
+        2. Click on 'Country Selector'
+        3. See Error
+      render: bash
+    validations:
+      required: true
+  - type: textarea
+    id: expected
     attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
+      label: "Expected Outcome"
+      description: Please enter the expected outcome
+      value: |
+        e.g Flag Images should show on the country selector
+      render: bash
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: "Actual Outcome"
+      description: Please enter the actual outcome
+      value: |
+        e.g Flag Images have placeholder images
+      render: bash
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: "Screenshots"
+      description: If applicable, add screenshots to help explain your problem. (USE JAM)
+      value: |
+        ![DESCRIPTION](LINK.png)
+      render: bash
     validations:
       required: false
   - type: textarea
-    id: what-happened
+    id: logs
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
+      label: "Logs"
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: bash
     validations:
-      required: true
-  - type: dropdown
-    id: version
-    attributes:
-      label: Version
-      description: What version of our software are you running?
-      options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
-      default: 0
-    validations:
-      required: true
+      required: false
   - type: dropdown
     id: browsers
     attributes:
-      label: What browsers are you seeing the problem on?
+      label: "Browsers"
+      description: What browsers are you seeing the problem on ?
       multiple: true
       options:
         - Firefox
         - Chrome
         - Safari
         - Microsoft Edge
-  - type: textarea
-    id: logs
+        - Opera
+    validations:
+      required: false
+  - type: dropdown
+    id: os
     attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-      render: shell
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      label: "OS"
+      description: What is the impacted environment ?
+      multiple: true
       options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
+        - Windows
+        - Linux
+        - Mac
+    validations:
+      required: false
+  - type: textarea
+    id: additional
+    attributes:
+      label: "Additional Information"
+      description: Please enter any additional information
+      value: |
+        
+      render: bash
+    validations:
+      required: false
